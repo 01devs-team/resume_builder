@@ -1,0 +1,36 @@
+version: '3.9'
+services:
+  app:
+    container_name: resume_builder_backend_app
+    image: cosmtrek/air:v1.40.4
+    working_dir: /app
+    environment:
+      - PROD=false
+      - GOPATH=/root/go
+    ports:
+      - 3001:3000
+    volumes:
+      - .:/app
+      - ./_go_path:/root/go
+    depends_on:
+      - pg
+  
+  pg:
+    container_name: resume_builder_backend_pg
+    image: postgres:14.5
+    restart: on-failure
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - ./_pg_data:/var/lib/postgresql/data
+  
+  adminer:
+    container_name: resume_builder_backend_adminer
+    image: adminer
+    restart: on-failure
+    ports:
+      - 8080:8080
+    depends_on:
+      - pg
