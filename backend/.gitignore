@@ -25,9 +25,11 @@ tmp
 
 # Database folder
 _pg_data
+.pg_data
 
 # Golang packages and libs
 _go_path
+.go_path
 
 # Environment file
 .env
