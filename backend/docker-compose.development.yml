@@ -11,7 +11,7 @@ services:
       - 3001:3000
     volumes:
       - .:/app
-      - ./_go_path:/root/go
+      - go_libs:/root/go
     depends_on:
       - pg
   
@@ -24,7 +24,7 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=${POSTGRES_DB}
     volumes:
-      - ./_pg_data:/var/lib/postgresql/data
+      - pg_data:/var/lib/postgresql/data
   
   adminer:
     container_name: resume_builder_backend_adminer
@@ -34,3 +34,7 @@ services:
       - 8080:8080
     depends_on:
       - pg
+
+volumes:
+  pg_data:
+  go_libs:
