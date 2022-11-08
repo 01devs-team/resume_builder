@@ -23,11 +23,5 @@ go.work
 # Temp directory for air
 tmp
 
-# Database folder
-.pg_data
-
-# Golang packages and libs
-.go_path
-
 # Environment file
 .env
