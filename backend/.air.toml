@@ -15,7 +15,7 @@ full_bin = "./tmp/main"
 # Watch these filename extensions.
 include_ext = ["go"]
 # Ignore these filename extensions or directories.
-exclude_dir = ["assets", "tmp", "_go_path", "_pg_data"]
+exclude_dir = ["assets", "tmp", ".go_path", ".pg_data"]
 # Watch these directories if you specified.
 include_dir = ["src"]
 # Watch these files.
