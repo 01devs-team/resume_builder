@@ -37,4 +37,6 @@ services:
 
 volumes:
   pg_data:
+    name: resume_builder_backend_pg_data
   go_libs:
+    name: resume_builder_backend_go_libs
